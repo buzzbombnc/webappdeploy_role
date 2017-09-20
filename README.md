@@ -13,10 +13,12 @@ Role Variables
 
 The following variables are defined in vars/main.yml:
 
-| Variable        | Required | Description                                                    |
-|:----------------|:--------:|:---------------------------------------------------------------|
-| app_user        | true     | Application username.                                          |
-
+| Variable         | Required | Description                                                    |
+|:-----------------|:--------:|:---------------------------------------------------------------|
+| server_name      | true     | The primary domain name of the server.                         |
+| server_admin     | true     | The primary admin's email address for the server.              |
+| alt_server_names | false    | A list of alternate server names.                              |
+| ssl_server       | false    | A boolean to determine if the server is SSL or not.            |
 
 Variables required by `application_role`:
 * app_user

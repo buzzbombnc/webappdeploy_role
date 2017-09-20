@@ -1,0 +1,33 @@
+---
+- name: "validate server_name"
+  assert:
+    that:
+      - "server_name is defined"
+      - "'.' in server_name"
+    msg: "'server_name' must be defined and a domain name"
+
+- name: "validate server_admin"
+  assert:
+    that:
+      - "server_admin is defined"
+      - "'@' in server_admin"
+      - "'.' in server_admin"
+    msg: "'server_admin' must be defined and an email address"
+
+- block:
+  - name: "validate alt_server_names is a list"
+    assert:
+      that: "alt_server_names is iterable and alt_server_names is not string"
+
+  - name: "validate each alt_server_name is a domain"
+    assert:
+      that:
+        - "'{{ item }}' is string"
+        - "'.' in '{{ item }}'"
+      msg: "'{{ item }}' must be a domain name"
+    with_items: "{{ alt_server_names }}"
+  when: "alt_server_names is defined"
+
+- name: "ensure ssl_server is a boolean"
+  set_fact:
+    ssl_server: "{{ not not(ssl_server|default(false)) }}"

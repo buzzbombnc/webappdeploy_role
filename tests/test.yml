@@ -1,5 +1,10 @@
 ---
 - hosts: localhost
-  remote_user: root
+  vars:
+    server_name: 'test.com'
+    server_admin: 'test@test.com'
+    ssl_server: false
+    alt_server_names:
+      - test2.com
   roles:
     - webappdeploy_role

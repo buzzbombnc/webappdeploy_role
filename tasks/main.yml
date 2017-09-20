@@ -1,2 +1,2 @@
 ---
-# tasks file for appdeploy_role
+- import_tasks: validate.yml
