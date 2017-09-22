@@ -1,3 +1,4 @@
 ---
 # defaults file for webappdeploy_role
 server_base_dir: "/srv/httpd"
+app_git_ref: "HEAD"

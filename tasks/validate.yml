@@ -39,3 +39,11 @@
       - "server_base_dir is string"
       - "server_base_dir.startswith('/')"
     msg: "'server_base_dir' must be defined and an absolute path"
+
+- name: "validate app_git_repo"
+  assert:
+    that:
+      - "app_git_repo is defined"
+      - "app_git_repo is string"
+      - "'/' in app_git_repo"
+    msg: "'app_git_repo' must be defined and an absolute path or URI"

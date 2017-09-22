@@ -19,6 +19,14 @@ The following variables must be provided:
 | server_admin     | true     | The primary admin's email address for the server.              |
 | alt_server_names | false    | A list of alternate server names.                              |
 | ssl_server       | false    | A boolean to determine if the server is SSL or not.            |
+| app_git_repo     | true     | Git repository to deploy from.                                 |
+| app_git_ref      | false    | Git reference to use.  Defaults to 'HEAD'.                     |
+
+Note that if your `app_git_repo` utilizes SSH, you must have a key available for connection.
+
+If you're using an SSH agent for connecting to your remote host and the git+SSH repository, you may need to add additional configuration to the Ansible inventory file:
+
+    ansible_ssh_extra_args="-o ForwardAgent=yes"
 
 Variables required by `application_role`:
 * app_user

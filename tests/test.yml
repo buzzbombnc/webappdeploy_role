@@ -8,5 +8,6 @@
       - test2.com
     app_user: testapp
     app_admin_sudo: true
+    app_git_repo: "git@github.com:buzzbombnc/basicflaskapp.git"
   roles:
     - webappdeploy_role
