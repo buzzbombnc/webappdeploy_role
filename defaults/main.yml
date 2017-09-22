@@ -1,2 +1,3 @@
 ---
-# defaults file for appdeploy_role
+# defaults file for webappdeploy_role
+server_base_dir: "/srv/httpd"

@@ -11,7 +11,7 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 
-The following variables are defined in vars/main.yml:
+The following variables must be provided:
 
 | Variable         | Required | Description                                                    |
 |:-----------------|:--------:|:---------------------------------------------------------------|
@@ -22,6 +22,12 @@ The following variables are defined in vars/main.yml:
 
 Variables required by `application_role`:
 * app_user
+
+The follow variables are defined in defaults/main.yml:
+
+| Variable         | Required | Description                                                    |
+|:-----------------|:--------:|:---------------------------------------------------------------|
+| server_base_dir  | false    | The base directory for websites.  Default: /srv/httpd          |
 
 See documentation for other optional arguements.
 

@@ -31,3 +31,11 @@
 - name: "ensure ssl_server is a boolean"
   set_fact:
     ssl_server: "{{ not not(ssl_server|default(false)) }}"
+
+- name: "validate server_base_dir"
+  assert:
+    that:
+      - "server_base_dir is defined"
+      - "server_base_dir is string"
+      - "server_base_dir.startswith('/')"
+    msg: "'server_base_dir' must be defined and an absolute path"
