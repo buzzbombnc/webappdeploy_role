@@ -46,3 +46,16 @@
     state: directory
   become: true
 
+- name: "clone the repository"
+  git:
+    repo: "{{ app_git_repo }}"
+    dest: "{{ deploy_helper.new_release_path }}"
+    depth: "{{ app_git_depth|default(omit) }}"
+    ssh_opts: "-o StrictHostKeyChecking=no"
+    version: "{{ app_git_ref }}"
+
+- name: "create the fresh clone flag file"
+  file:
+    path: "{{ deploy_helper.new_release_path }}/{{ deploy_helper.unfinished_filename }}"
+    state: touch
+

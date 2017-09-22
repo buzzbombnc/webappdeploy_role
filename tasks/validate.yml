@@ -47,3 +47,9 @@
       - "app_git_repo is string"
       - "'/' in app_git_repo"
     msg: "'app_git_repo' must be defined and an absolute path or URI"
+
+# Git depth != 1 generates a warning when the ref isn't HEAD.
+- name: "set app_git_depth to 1"
+  set_fact:
+    app_git_depth: 1
+  when: "app_git_ref == 'HEAD'"
