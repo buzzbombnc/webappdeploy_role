@@ -1,2 +1,6 @@
 ---
 - import_tasks: validate.yml
+
+- name: "create the application user/group"
+  include_role:
+    name: application_role

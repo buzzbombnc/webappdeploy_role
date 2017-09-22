@@ -6,5 +6,7 @@
     ssl_server: false
     alt_server_names:
       - test2.com
+    app_user: testapp
+    app_admin_sudo: true
   roles:
     - webappdeploy_role
