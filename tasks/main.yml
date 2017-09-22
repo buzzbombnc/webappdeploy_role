@@ -17,3 +17,32 @@
     state: directory
   become: true
 
+- name: "begin the current release"
+  deploy_helper:
+    path: "{{ webapp_dir }}"
+  become: true
+
+- name: "ensure that the 'releases' directory has correct permissions"
+  file:
+    path: "{{ deploy_helper.releases_path }}"
+    mode: 0775
+    state: directory
+  become: true
+
+- name: "ensure that the 'new_release_path' directory exists and is owned by the current user"
+  file:
+    path: "{{ deploy_helper.new_release_path }}"
+    owner: "{{ ansible_user_id }}"
+    mode: 0775
+    state: directory
+  become: true
+
+- name: "ensure that the shared_path is owned by the app_user"
+  file:
+    path: "{{ deploy_helper.shared_path }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: 0775
+    state: directory
+  become: true
+
