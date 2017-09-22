@@ -4,3 +4,16 @@
 - name: "create the application user/group"
   include_role:
     name: application_role
+
+- name: "create the webapp_dir"
+  set_fact:
+    webapp_dir: "{{ server_base_dir }}/{{ server_name }}"
+
+- name: "build the webapp_dir"
+  file:
+    path: "{{ webapp_dir }}"
+    owner: root
+    mode: 0775
+    state: directory
+  become: true
+
