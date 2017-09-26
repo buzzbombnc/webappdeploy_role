@@ -40,6 +40,15 @@ The follow variables are defined in defaults/main.yml:
 
 See documentation for other optional arguements.
 
+Apptasks
+--------
+
+* virtualenv
+
+| Variable                 | Required | Description                                        |
+|:-------------------------|:--------:|:---------------------------------------------------|
+| virtualenv_site_packages | false    | Include site pkgs in virtualenv?  Default is true. |
+
 Dependencies
 ------------
 

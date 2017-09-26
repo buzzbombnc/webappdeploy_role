@@ -11,5 +11,6 @@
     app_git_repo: "git@github.com:buzzbombnc/basicflaskapp.git"
     app_tasks:
       - demo
+      - virtualenv
   roles:
     - webappdeploy_role
