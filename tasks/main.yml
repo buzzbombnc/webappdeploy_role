@@ -87,15 +87,3 @@
     release: "{{ deploy_helper.new_release }}"
     state: finalize
   become: true
-
-# 5) [list of includes]
-#   a. Python:
-#     i. Virtualenv (AU)
-#     ii. Requirements (AU)
-#   b. Django:
-#     i. Check (AU)
-#     ii. Tests (AU)
-#     iii. Migrate (AU)
-# 7) Apache config (root)
-# 8) Apache restart (root)
-

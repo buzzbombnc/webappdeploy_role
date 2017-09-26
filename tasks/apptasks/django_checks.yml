@@ -1,0 +1,7 @@
+---
+- name: "execute Django checks"
+  # TODO: Fail on warnings.
+  command: ./env/bin/python manage.py check --no-color
+  args:
+      chdir: "{{ deploy_helper.new_release_path }}"
+

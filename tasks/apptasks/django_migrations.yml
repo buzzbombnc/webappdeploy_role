@@ -1,0 +1,6 @@
+---
+- name: "execute Django database migrations"
+  # TODO: Check for migrations first?
+  command: ./env/bin/python manage.py migrate --no-color --no-input
+  args:
+      chdir: "{{ deploy_helper.new_release_path }}"

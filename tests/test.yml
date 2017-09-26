@@ -12,5 +12,8 @@
     app_tasks:
       - demo
       - virtualenv
+      - django_checks
+      - django_tests
+      - django_migrations
   roles:
     - webappdeploy_role
