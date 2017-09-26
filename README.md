@@ -11,7 +11,7 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 
-The following variables must be provided:
+The following variables may be provided:
 
 | Variable         | Required | Description                                                    |
 |:-----------------|:--------:|:---------------------------------------------------------------|
@@ -21,6 +21,7 @@ The following variables must be provided:
 | ssl_server       | false    | A boolean to determine if the server is SSL or not.            |
 | app_git_repo     | true     | Git repository to deploy from.                                 |
 | app_git_ref      | false    | Git reference to use.  Defaults to 'HEAD'.                     |
+| app_tasks        | false    | a list of application tasks to include from the `apptasks` dir.|
 
 Note that if your `app_git_repo` utilizes SSH, you must have a key available for connection.
 

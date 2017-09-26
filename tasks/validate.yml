@@ -53,3 +53,15 @@
   set_fact:
     app_git_depth: 1
   when: "app_git_ref == 'HEAD'"
+
+- block:
+  - name: "validate app_tasks is a list"
+    assert:
+      that: "app_tasks is iterable and app_tasks is not string"
+
+  - name: "validate each app_task is a string"
+    assert:
+      that: "'{{ item }}' is string"
+      msg: "'{{ item }}' must be a string"
+    with_items: "{{ app_tasks }}"
+  when: "app_tasks is defined"

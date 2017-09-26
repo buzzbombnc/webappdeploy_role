@@ -1,0 +1,4 @@
+---
+- name: demo app task
+  debug:
+    msg: "demo app task"

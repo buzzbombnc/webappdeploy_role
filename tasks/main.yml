@@ -68,6 +68,12 @@
     state: directory
   become: true
 
+- include_tasks: "apptasks/{{ item }}.yml"
+  with_items: "{{ app_tasks }}"
+  when: "app_tasks is defined"
+  become_user: "{{ app_user }}"
+  become: true
+
 - name: "remove the fresh clone flag file"
   file:
     path: "{{ deploy_helper.new_release_path }}/{{ deploy_helper.unfinished_filename }}"
@@ -81,4 +87,15 @@
     release: "{{ deploy_helper.new_release }}"
     state: finalize
   become: true
+
+# 5) [list of includes]
+#   a. Python:
+#     i. Virtualenv (AU)
+#     ii. Requirements (AU)
+#   b. Django:
+#     i. Check (AU)
+#     ii. Tests (AU)
+#     iii. Migrate (AU)
+# 7) Apache config (root)
+# 8) Apache restart (root)
 
