@@ -53,6 +53,7 @@
     depth: "{{ app_git_depth|default(omit) }}"
     ssh_opts: "-o StrictHostKeyChecking=no"
     version: "{{ app_git_ref }}"
+  register: gitclone
 
 - name: "create the fresh clone flag file"
   file:
