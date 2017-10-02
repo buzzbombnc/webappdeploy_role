@@ -49,6 +49,17 @@ Apptasks
 |:-------------------------|:--------:|:---------------------------------------------------|
 | virtualenv_site_packages | false    | Include site pkgs in virtualenv?  Default is true. |
 
+* environment
+
+Builds an `environment` file in the current deployment directory.  Will get populated with the full path to the 
+shared directory and the version of the git repo.
+
+In addition:
+
+| Variable | Required | Description                                        |
+|:---------|:--------:|:---------------------------------------------------|
+| env_vars | false    | A dictionary of environment key-values.            |
+
 * django
 
   + Performs checks, tests, and database migrations.

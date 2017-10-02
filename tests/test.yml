@@ -12,6 +12,10 @@
     app_tasks:
       - demo
       - virtualenv
+      - environment
       - django
+    env_vars:
+      this_is: a test
+      testing: 123
   roles:
     - webappdeploy_role
