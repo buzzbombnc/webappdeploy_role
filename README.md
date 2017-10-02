@@ -56,9 +56,9 @@ shared directory and the version of the git repo.
 
 In addition:
 
-| Variable | Required | Description                                        |
-|:---------|:--------:|:---------------------------------------------------|
-| env_vars | false    | A dictionary of environment key-values.            |
+| Variable     | Required | Description                                        |
+|:-------------|:--------:|:---------------------------------------------------|
+| app_env_vars | false    | A dictionary of environment key-values.            |
 
 * django
 

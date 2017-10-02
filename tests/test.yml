@@ -14,8 +14,7 @@
       - virtualenv
       - environment
       - django
-    env_vars:
-      this_is: a test
-      testing: 123
+    app_env_vars:
+      secret_key: 123456
   roles:
     - webappdeploy_role

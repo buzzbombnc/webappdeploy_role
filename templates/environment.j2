@@ -4,6 +4,6 @@
 {% if gitclone.after|default() -%}
 	VERSION={{ gitclone.after }}
 {% endif %}
-{%- if env_vars|default(None) %}{% for key, value in env_vars.iteritems() %}
+{%- if app_env_vars|default(None) %}{% for key, value in app_env_vars.iteritems() %}
 {{ key|upper }}={{ value }}
 {% endfor %}{% endif %}
