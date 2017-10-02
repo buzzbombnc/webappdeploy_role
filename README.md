@@ -49,11 +49,9 @@ Apptasks
 |:-------------------------|:--------:|:---------------------------------------------------|
 | virtualenv_site_packages | false    | Include site pkgs in virtualenv?  Default is true. |
 
-* django_checks
+* django
 
-* django_tests
-
-* django_migrations
+  + Performs checks, tests, and database migrations.
 
 Dependencies
 ------------
