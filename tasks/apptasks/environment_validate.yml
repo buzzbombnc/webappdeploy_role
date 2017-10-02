@@ -1,0 +1,15 @@
+---
+- block:
+  - name: "validate env_vars is a dictionary"
+    assert:
+      that: "env_vars is mapping"
+      # and app_tasks is not string"
+
+  - name: "validate each env_var value is a string or number"
+    assert:
+      that:
+        - "'{{ item.key }}' is string"
+        - "'{{ item.value }}' is string or '{{ item.value }}' is number"
+      msg: "'{{ item.key }}' must be a string and have a string/number value"
+    with_dict: "{{ env_vars }}"
+  when: "env_vars is defined"

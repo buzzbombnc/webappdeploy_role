@@ -65,3 +65,8 @@
       msg: "'{{ item }}' must be a string"
     with_items: "{{ app_tasks }}"
   when: "app_tasks is defined"
+
+- include_tasks: "{{ filename }}"
+  with_fileglob: "apptasks/*_validate.yml"
+  loop_control:
+    loop_var: filename
