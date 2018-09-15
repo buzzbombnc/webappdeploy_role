@@ -69,9 +69,10 @@
     state: directory
   become: true
 
-- include_tasks: "apptasks/{{ item }}.yml"
-  with_items: "{{ app_tasks }}"
-  when: "app_tasks is defined"
+- block:
+  - include_tasks: "apptasks/{{ item }}.yml"
+    with_items: "{{ app_tasks }}"
+    when: "app_tasks is defined"
   become_user: "{{ app_user }}"
   become: true
 
