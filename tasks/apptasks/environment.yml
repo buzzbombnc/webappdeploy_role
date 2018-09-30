@@ -2,7 +2,7 @@
 - name: "build environment file"
   template:
     src: environment.j2
-    dest: "{{ deploy_helper.new_release_path }}/environment"
+    dest: "{{ deploy_helper.new_release_path }}/.env"
     owner: "{{ app_user }}"
     group: "{{ app_group }}"
     mode: 0640
