@@ -2,7 +2,7 @@ webappdeploy_role
 =================
 
 Role to build out a web application on a server:
-1. Creates user/group for application.
+1. Creates user/group for application (via `application_role` dependency.)
 2. Downloads source code for app.
 3. Makes any tweaks as described by the `app_tasks` variable.
 

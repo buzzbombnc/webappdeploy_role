@@ -1,10 +1,6 @@
 ---
 - import_tasks: validate.yml
 
-- name: "create the application user/group"
-  include_role:
-    name: application_role
-
 - name: "create the webapp_dir"
   set_fact:
     webapp_dir: "{{ server_base_dir }}/{{ server_name }}"
